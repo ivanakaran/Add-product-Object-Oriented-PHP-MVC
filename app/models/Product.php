@@ -34,19 +34,14 @@ class Product
         }
     }
 
-    public function delete()
+    public function delete($deleteid)
     {
-
-        foreach($_POST['products'] as $deleteid){
-
-            $this->db->query("DELETE from products WHERE id=".$deleteid);
-            if ($this->db->execute()) {
-                               return true;
-                           } else {
-                               return false;
-                           }      
-                        }        
-          }
-        
+        $this->db->query("DELETE from products WHERE id=" . $deleteid);
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

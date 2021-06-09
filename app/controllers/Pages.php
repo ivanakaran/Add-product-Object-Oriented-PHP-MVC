@@ -51,8 +51,8 @@ class Pages extends Controller
                 $data['type_err'] = 'Please enter product type';
             }
 
-            if(empty($data['typev'])){
-              $data['typevalue_err'] = 'Please, provide the data of indicated type';
+            if (empty($data['typev'])) {
+                $data['typevalue_err'] = 'Please, provide the data of indicated type';
             }
 
             if (empty($data['name_err']) && empty($data['name_err']) && empty($data['price_err'])) {
@@ -80,16 +80,19 @@ class Pages extends Controller
 
     }
 
-  public function deleteProduct(){
-     if (isset($_POST['deleteMutlipleBtn'])) {
-         if (isset($_POST['products'])) {
-             if ($this->productModel->delete()) {
-                 redirect('');
-             } else {
-                 die('Something went wrong');
-             }
-         }
-     }
-  }
+    public function deleteProduct()
+    {
+        if (isset($_POST['deleteMutlipleBtn'])) {
+            if (isset($_POST['products'])) {
+                foreach ($_POST['products'] as $deleteid) {
+                    if ($this->productModel->delete($deleteid)) {
+                        redirect('');
+                    } else {
+                        die('Something went wrong');
+                    }
+                }
+            }
+        }
+    }
 
 }
