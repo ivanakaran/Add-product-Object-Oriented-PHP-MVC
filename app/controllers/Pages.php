@@ -91,6 +91,8 @@ class Pages extends Controller
                         die('Something went wrong');
                     }
                 }
+            }else{
+                redirect('');
             }
         }
     }
