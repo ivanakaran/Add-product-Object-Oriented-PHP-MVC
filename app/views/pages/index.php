@@ -5,12 +5,12 @@
   </div>
   <div class="d-flex justify-content-between">
     <div>
-      <a href="<?= URLROOT?>/pages/addproduct" class="btn btn-success btn-sm mr-3">Add Product</a>
+      <a href="<?= URLROOT?>/pages/addproduct" class="btn btn-success btn-sm mr-3">ADD</a>
     </div>
     <div>
       <form action="<?= URLROOT?>/pages/deleteProduct" method="POST">
         <input type="submit" class="btn btn-outline-danger btn-sm" id="delete-product-btn" name="deleteMutlipleBtn"
-          value="Mass Delete">
+          value="MASS DELETE">
     </div>
   </div>
 </div>
